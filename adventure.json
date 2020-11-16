@@ -9,10 +9,14 @@
     "exits": [
       {
         "destination": "hallway",
-        "description": "A door leads into the hall."
+        "description": "A door leads into the hall.",
+        "hidden": false
       }
     ],
-    "items": []
+    "items": [
+      "Principle's ID"
+    ],
+    "cat": false
   },
   "hallway": {
     "name": "hallway",
@@ -20,14 +24,100 @@
     "exits": [
       {
         "destination": "classroom",
-        "description": "Go back into the classroom."
+        "description": "Go back into the classroom.",
+        "hidden": false
       },
       {
         "destination": "staircase",
-        "description": "A door with the words STAIRS is stuck open."
+        "description": "A door with the words STAIRS is stuck open.",
+        "hidden": false
+      },
+      {
+        "destination": "Janitor closet",
+        "description": "A door with a crooked janitors sign is locked",
+        "hidden": false
+      },
+      {
+        "destination": "Principles Office",
+        "description": "Door seems bolted shut",
+        "hidden": false,
+        "required_key": "Principle's ID"
       }
     ],
-    "items": []
+    "items": [
+      "nothing"
+    ],
+    "cat": false
+  },
+  "Principles Office": {
+    "name": "Principles Office",
+    "description": "The drawers and shelves are overflowing with loose papers and confiscated objectes",
+    "exits": [
+      {
+        "destination": "Under Principle's desk",
+        "description": "If always wondered what the bottom of a desk looked like.",
+        "hidden": false
+      },
+      {
+        "destination": "hallway",
+        "description": "This reminds me of trips to the office, lets leave.",
+        "hidden": false
+      }
+    ],
+    "items": [
+      "nothing"
+    ],
+    "cat": false
+  },
+  "Under Principle's desk": {
+    "name": "Under Principle's desk",
+    "description": "A small red button is tucked in the back corner.",
+    "exits": [
+      {
+        "destination": "Principles Office",
+        "description": "Let's get out from under here, it smells like old sandwiches and dirty socks!",
+        "hidden": false
+      }
+    ],
+    "items": [
+      "nothing"
+    ],
+    "cat": false
+  },
+  "Janitor closet": {
+    "name": "Janitor closet",
+    "description": "There are many wierd items scattered around.",
+    "exits": [
+      {
+        "destination": "hallway",
+        "description": "Nothing in here, turn around",
+        "hidden": false
+      },
+      {
+        "destination": "Crawl Space",
+        "description": "There are scratch marks on the wall.",
+        "hidden": true
+      }
+    ],
+    "items": [
+      "nothing"
+    ],
+    "cat": false
+  },
+  "Crawl Space": {
+    "name": "Crawl Space",
+    "description": "Hidden room behind utility shelf",
+    "exits": [
+      {
+        "destination": "Janitor closet",
+        "description": "Nothing else in here.",
+        "hidden": false
+      }
+    ],
+    "items": [
+      "Janitor's key"
+    ],
+    "cat": false
   },
   "staircase": {
     "name": "staircase",
@@ -35,20 +125,50 @@
     "exits": [
       {
         "destination": "hallway",
-        "description": "Nevermind; go back to the hallway."
+        "description": "Nevermind; go back to the hallway.",
+        "hidden": false
+      },
+      {
+        "destination": "Cafeteria",
+        "description": "I smell something funky through here",
+        "hidden": false,
+        "required_key": "Janitor's key"
       },
       {
         "destination": "outside",
-        "description": "A door at the bottom of the stairs has a red, glowing, EXIT sign."
+        "description": "A door at the bottom of the stairs has a red, glowing, EXIT sign.",
+        "hidden": false,
+        "required_key": "Master key"
       }
     ],
-    "items": []
+    "items": [
+      "nothing"
+    ],
+    "cat": false
+  },
+  "Cafeteria": {
+    "name": "Cafeteria",
+    "description": "Moldy food is strewn across the ground",
+    "exits": [
+      {
+        "destination": "staircase",
+        "description": "Is that a dead rat!! I gotta go!",
+        "hidden": false
+      }
+    ],
+    "items": [
+      "nothing"
+    ],
+    "cat": false
   },
   "outside": {
     "name": "outside",
     "description": "You've escaped! It's cold out.",
     "exits": [],
-    "items": [],
+    "items": [
+      "nothing"
+    ],
+    "cat": false,
     "ends_game": true
   }
 }
